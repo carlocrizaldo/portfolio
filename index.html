@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Carlo Crizaldo | Senior IT & Systems Professional</title>
+<meta name="description" content="Carlo Crizaldo — Senior IT & Systems Professional with 25+ years across enterprise infrastructure, systems & network administration, .NET development, SAP business systems, and warehouse/inventory operations. 12 years at Intel Corporation." />
+<meta name="author" content="Carlo Crizaldo" />
+<meta name="robots" content="index, follow" />
+<!-- Open Graph / social preview -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Carlo Crizaldo | Senior IT & Systems Professional" />
+<meta property="og:description" content="Enterprise IT infrastructure, systems & network administration, .NET development, and SAP-driven business operations — 25+ years of real-world experience." />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Carlo Crizaldo | Senior IT & Systems Professional" />
+<meta name="twitter:description" content="Senior IT & Systems Professional — infrastructure, systems, networking, .NET, and SAP business operations." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0a0c10;
+    --bg-2: #0d1015;
+    --surface: #11151c;
+    --surface-2: #151a22;
+    --surface-3: #1b212b;
+    --border: #232b38;
+    --border-soft: #1a212c;
+    --text: #f3f6fb;
+    --text-2: #9aa6b6;
+    --text-3: #6b7585;
+    --accent: #4c8dff;
+    --accent-2: #6ea8fe;
+    --accent-soft: rgba(76, 141, 255, 0.12);
+    --accent-glow: rgba(76, 141, 255, 0.18);
+    --radius: 16px;
+    --radius-sm: 10px;
+    --maxw: 1160px;
+    --shadow: 0 18px 50px -20px rgba(0,0,0,0.7);
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  .container { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+  .display { font-family: 'Space Grotesk', 'Inter', sans-serif; letter-spacing: -0.02em; }
+
+  /* ---------- NAV ---------- */
+  header.nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(10, 12, 16, 0.72);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .brand { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: -0.01em; }
+  .brand span { color: var(--accent-2); }
+  .nav-links { display: flex; gap: 30px; align-items: center; }
+  .nav-links a { color: var(--text-2); font-size: 14.5px; font-weight: 500; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--text); }
+  .nav-cta {
+    background: var(--accent); color: #fff !important; padding: 9px 18px; border-radius: 9px;
+    font-weight: 600; transition: background 0.2s, transform 0.2s;
+  }
+  .nav-cta:hover { background: var(--accent-2); transform: translateY(-1px); }
+  .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: 0; cursor: pointer; padding: 8px; }
+  .hamburger span { width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: 0.25s; }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* ---------- BUTTONS ---------- */
+  .btn {
+    display: inline-flex; align-items: center; gap: 9px;
+    font-weight: 600; font-size: 15px; padding: 13px 24px; border-radius: 10px;
+    transition: transform 0.2s var(--ease), background 0.2s, border-color 0.2s, box-shadow 0.2s;
+    cursor: pointer; border: 1px solid transparent;
+  }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { background: var(--accent-2); transform: translateY(-2px); box-shadow: 0 12px 30px -10px var(--accent-glow); }
+  .btn-ghost { background: transparent; color: var(--text); border-color: var(--border); }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent-2); transform: translateY(-2px); }
+  .btn svg { width: 17px; height: 17px; }
+
+  /* ---------- SECTION SHELL ---------- */
+  section { padding: 110px 0; position: relative; }
+  .section-head { max-width: 720px; margin-bottom: 56px; }
+  .eyebrow {
+    display: inline-block; font-size: 12.5px; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--accent-2); margin-bottom: 16px;
+  }
+  .section-title { font-size: 38px; line-height: 1.15; margin-bottom: 18px; }
+  .section-sub { color: var(--text-2); font-size: 17px; }
+  .divider { width: 46px; height: 3px; background: var(--accent); border-radius: 3px; margin-top: 20px; }
+
+  /* ---------- HERO ---------- */
+  .hero { min-height: 100vh; display: flex; align-items: center; padding-top: 120px; padding-bottom: 80px; position: relative; overflow: hidden; }
+  .hero::before {
+    content: ""; position: absolute; top: -10%; left: 50%; transform: translateX(-50%);
+    width: 900px; height: 600px; background: radial-gradient(closest-side, var(--accent-glow), transparent 70%);
+    filter: blur(20px); pointer-events: none;
+  }
+  .hero::after {
+    content: ""; position: absolute; inset: 0;
+    background-image: linear-gradient(var(--border-soft) 1px, transparent 1px), linear-gradient(90deg, var(--border-soft) 1px, transparent 1px);
+    background-size: 56px 56px; mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, #000 30%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, #000 30%, transparent 75%);
+    opacity: 0.5; pointer-events: none;
+  }
+  .hero-inner { position: relative; z-index: 2; max-width: 880px; }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 9px; padding: 7px 15px; border: 1px solid var(--border);
+    border-radius: 100px; font-size: 13.5px; color: var(--text-2); margin-bottom: 26px; background: var(--surface);
+  }
+  .hero-tag .dot { width: 8px; height: 8px; border-radius: 50%; background: #36d399; box-shadow: 0 0 0 4px rgba(54,211,153,0.15); }
+  .hero h1 { font-size: clamp(44px, 8vw, 78px); line-height: 1.02; margin-bottom: 14px; letter-spacing: -0.03em; }
+  .hero h1 .accent { color: var(--accent-2); }
+  .hero-role { font-size: clamp(18px, 3vw, 23px); color: var(--text); font-weight: 600; margin-bottom: 24px; }
+  .hero-role .sep { color: var(--accent); margin: 0 10px; }
+  .hero-lead { font-size: 18.5px; color: var(--text-2); max-width: 660px; margin-bottom: 38px; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 18px; }
+  .hero-connect { font-size: 14.5px; color: var(--text-3); }
+  .hero-connect a { color: var(--accent-2); border-bottom: 1px solid transparent; }
+  .hero-connect a:hover { border-color: var(--accent-2); }
+
+  /* ---------- STATS ---------- */
+  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  .stat {
+    background: linear-gradient(180deg, var(--surface-2), var(--surface));
+    border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 24px;
+    transition: border-color 0.3s, transform 0.3s var(--ease);
+  }
+  .stat:hover { border-color: var(--accent); transform: translateY(-3px); }
+  .stat .num { font-family: 'Space Grotesk', sans-serif; font-size: 40px; font-weight: 700; color: var(--text); line-height: 1; letter-spacing: -0.02em; }
+  .stat .num span { color: var(--accent-2); }
+  .stat .label { color: var(--text-2); font-size: 14.5px; margin-top: 10px; }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 56px; align-items: start; }
+  .about-text p { color: var(--text-2); font-size: 16.5px; margin-bottom: 18px; }
+  .about-text p strong { color: var(--text); font-weight: 600; }
+  .about-card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 28px; position: sticky; top: 96px;
+  }
+  .about-card h4 { font-size: 15px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-3); margin-bottom: 18px; }
+  .about-card ul { list-style: none; }
+  .about-card li { display: flex; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--border-soft); color: var(--text-2); font-size: 14.5px; }
+  .about-card li:last-child { border-bottom: 0; }
+  .about-card li svg { width: 18px; height: 18px; color: var(--accent-2); flex-shrink: 0; margin-top: 3px; }
+
+  /* ---------- EXPERTISE ---------- */
+  .expertise-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .exp-card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 30px;
+    transition: border-color 0.3s, transform 0.3s var(--ease), background 0.3s;
+  }
+  .exp-card:hover { border-color: var(--accent); transform: translateY(-3px); background: var(--surface-2); }
+  .exp-icon {
+    width: 46px; height: 46px; border-radius: 12px; background: var(--accent-soft);
+    display: grid; place-items: center; margin-bottom: 18px; color: var(--accent-2);
+  }
+  .exp-icon svg { width: 24px; height: 24px; }
+  .exp-card h3 { font-size: 19px; margin-bottom: 16px; }
+  .exp-tags { display: flex; flex-wrap: wrap; gap: 9px; }
+  .exp-tags span {
+    font-size: 13.5px; color: var(--text-2); background: var(--surface-3); border: 1px solid var(--border-soft);
+    padding: 6px 12px; border-radius: 8px;
+  }
+
+  /* ---------- TIMELINE ---------- */
+  .timeline { position: relative; margin-top: 20px; }
+  .timeline::before { content: ""; position: absolute; left: 22px; top: 8px; bottom: 8px; width: 2px; background: var(--border); }
+  .tl-item { position: relative; padding-left: 66px; padding-bottom: 46px; }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-dot {
+    position: absolute; left: 13px; top: 4px; width: 20px; height: 20px; border-radius: 50%;
+    background: var(--bg); border: 3px solid var(--accent); box-shadow: 0 0 0 5px var(--accent-soft);
+  }
+  .tl-item.feature .tl-dot { border-color: var(--accent-2); box-shadow: 0 0 0 5px var(--accent-glow); }
+  .tl-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 14px; margin-bottom: 4px; }
+  .tl-role { font-size: 20px; font-weight: 700; }
+  .tl-co { color: var(--accent-2); font-weight: 600; font-size: 15.5px; }
+  .tl-meta { color: var(--text-3); font-size: 14px; margin-bottom: 14px; display: flex; flex-wrap: wrap; gap: 6px 16px; }
+  .tl-meta span { display: inline-flex; align-items: center; gap: 6px; }
+  .tl-meta svg { width: 14px; height: 14px; }
+  .tl-body { color: var(--text-2); font-size: 15.5px; }
+  .tl-body ul { list-style: none; margin-top: 10px; }
+  .tl-body li { position: relative; padding-left: 22px; margin-bottom: 9px; }
+  .tl-body li::before { content: ""; position: absolute; left: 0; top: 10px; width: 7px; height: 7px; border-radius: 2px; background: var(--accent); }
+  .tl-award {
+    display: inline-block; margin-top: 14px; font-size: 13px; font-weight: 600; color: var(--accent-2);
+    background: var(--accent-soft); border: 1px solid rgba(76,141,255,0.25); padding: 6px 13px; border-radius: 8px;
+  }
+
+  /* ---------- INTEL FEATURE ---------- */
+  .intel {
+    background: linear-gradient(135deg, var(--surface-2), var(--surface));
+    border: 1px solid var(--border); border-radius: 22px; padding: 48px; position: relative; overflow: hidden;
+  }
+  .intel::after {
+    content: ""; position: absolute; right: -60px; top: -60px; width: 320px; height: 320px;
+    background: radial-gradient(closest-side, var(--accent-glow), transparent 70%); filter: blur(10px); pointer-events: none;
+  }
+  .intel-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: center; position: relative; z-index: 2; }
+  .intel h3 { font-size: 30px; line-height: 1.18; margin-bottom: 16px; }
+  .intel p { color: var(--text-2); font-size: 16px; margin-bottom: 18px; }
+  .intel-steps { list-style: none; margin-top: 8px; }
+  .intel-steps li { display: flex; gap: 14px; padding: 12px 0; border-top: 1px solid var(--border-soft); }
+  .intel-steps li:first-child { border-top: 0; }
+  .intel-steps .yr { font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: var(--accent-2); min-width: 64px; font-size: 15px; }
+  .intel-steps .txt { color: var(--text-2); font-size: 14.5px; }
+  .intel-steps .txt b { color: var(--text); font-weight: 600; }
+  .awards-box { background: var(--bg); border: 1px solid var(--border); border-radius: 16px; padding: 28px; }
+  .awards-box h4 { font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-3); margin-bottom: 18px; }
+  .award-row { display: flex; align-items: center; justify-content: space-between; padding: 11px 0; border-bottom: 1px solid var(--border-soft); }
+  .award-row:last-child { border-bottom: 0; }
+  .award-row .name { color: var(--text); font-weight: 600; font-size: 15px; }
+  .award-row .cnt { font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: var(--accent-2); font-size: 22px; }
+
+  /* ---------- PROJECTS ---------- */
+  .proj-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+  .proj {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 30px;
+    display: flex; flex-direction: column; transition: border-color 0.3s, transform 0.3s var(--ease);
+  }
+  .proj:hover { border-color: var(--accent); transform: translateY(-3px); }
+  .proj-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 14px; margin-bottom: 16px; }
+  .proj h3 { font-size: 19px; line-height: 1.25; }
+  .proj-co { font-size: 13px; color: var(--accent-2); font-weight: 600; white-space: nowrap; }
+  .proj-block { margin-bottom: 14px; }
+  .proj-block .k { font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-3); font-weight: 700; margin-bottom: 4px; }
+  .proj-block .v { color: var(--text-2); font-size: 14.5px; }
+  .proj-tech { margin-top: auto; padding-top: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .proj-tech span { font-size: 12.5px; color: var(--text-3); background: var(--surface-3); border: 1px solid var(--border-soft); padding: 4px 10px; border-radius: 7px; }
+
+  /* ---------- VALUE / STRENGTHS ---------- */
+  .value-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .value {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px;
+    transition: border-color 0.3s, transform 0.3s var(--ease);
+  }
+  .value:hover { border-color: var(--accent); transform: translateY(-3px); }
+  .value .vi { width: 42px; height: 42px; border-radius: 11px; background: var(--accent-soft); color: var(--accent-2); display: grid; place-items: center; margin-bottom: 16px; }
+  .value .vi svg { width: 22px; height: 22px; }
+  .value h3 { font-size: 17px; margin-bottom: 9px; }
+  .value p { color: var(--text-2); font-size: 14.5px; }
+
+  .strengths { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 8px; }
+  .strength { display: flex; gap: 14px; align-items: flex-start; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 20px 22px; }
+  .strength .si { color: var(--accent-2); flex-shrink: 0; margin-top: 2px; }
+  .strength .si svg { width: 22px; height: 22px; }
+  .strength h4 { font-size: 16px; margin-bottom: 4px; }
+  .strength p { color: var(--text-2); font-size: 14px; }
+
+  /* ---------- TECH STACK ---------- */
+  .tech-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .tech-col { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 26px; }
+  .tech-col h3 { font-size: 16px; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; color: var(--text); }
+  .tech-col h3 .tic { width: 30px; height: 30px; border-radius: 8px; background: var(--accent-soft); color: var(--accent-2); display: grid; place-items: center; }
+  .tech-col h3 .tic svg { width: 17px; height: 17px; }
+  .tech-col .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tech-col .chips span { font-size: 13.5px; color: var(--text-2); background: var(--surface-3); border: 1px solid var(--border-soft); padding: 6px 12px; border-radius: 8px; }
+
+  /* ---------- EDUCATION (placeholders) ---------- */
+  .edu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .edu {
+    background: var(--surface); border: 1px dashed var(--border); border-radius: var(--radius); padding: 26px;
+    position: relative;
+  }
+  .edu .ph-tag { position: absolute; top: 16px; right: 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #f5b14c; background: rgba(245,177,76,0.12); border: 1px solid rgba(245,177,76,0.3); padding: 4px 10px; border-radius: 7px; }
+  .edu h3 { font-size: 17px; margin-bottom: 6px; }
+  .edu p { color: var(--text-2); font-size: 14.5px; }
+  .edu .hint { color: var(--text-3); font-size: 13px; margin-top: 12px; font-style: italic; }
+
+  /* ---------- CONTACT ---------- */
+  .contact {
+    background: linear-gradient(135deg, var(--surface-2), var(--surface));
+    border: 1px solid var(--border); border-radius: 24px; padding: 60px 48px; text-align: center; position: relative; overflow: hidden;
+  }
+  .contact::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 50% 0%, var(--accent-glow), transparent 70%); pointer-events: none; }
+  .contact h2 { font-size: clamp(28px, 5vw, 42px); line-height: 1.12; margin-bottom: 16px; position: relative; }
+  .contact p { color: var(--text-2); font-size: 17px; max-width: 600px; margin: 0 auto 32px; position: relative; }
+  .contact-actions { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; position: relative; margin-bottom: 34px; }
+  .contact-links { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; position: relative; }
+  .contact-links a {
+    display: inline-flex; align-items: center; gap: 9px; font-size: 14.5px; color: var(--text-2);
+    background: var(--surface); border: 1px solid var(--border); padding: 11px 18px; border-radius: 10px; transition: border-color 0.25s, color 0.25s;
+  }
+  .contact-links a:hover { border-color: var(--accent); color: var(--text); }
+  .contact-links a svg { width: 17px; height: 17px; color: var(--accent-2); }
+
+  /* ---------- FOOTER ---------- */
+  footer { border-top: 1px solid var(--border-soft); padding: 36px 0; }
+  .foot-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 14px; align-items: center; color: var(--text-3); font-size: 14px; }
+
+  /* ---------- REVEAL ANIM ---------- */
+  .js .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
+  .js .reveal.visible { opacity: 1; transform: none; }
+  .reveal.d1 { transition-delay: 0.08s; }
+  .reveal.d2 { transition-delay: 0.16s; }
+  .reveal.d3 { transition-delay: 0.24s; }
+  .reveal.d4 { transition-delay: 0.32s; }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 980px) {
+    .about-grid { grid-template-columns: 1fr; gap: 36px; }
+    .about-card { position: static; }
+    .intel-grid { grid-template-columns: 1fr; gap: 32px; }
+    .expertise-grid, .proj-grid, .tech-grid, .value-grid, .edu-grid { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .strengths { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 720px) {
+    .nav-links {
+      position: fixed; top: 68px; left: 0; right: 0; background: var(--bg-2); border-bottom: 1px solid var(--border);
+      flex-direction: column; align-items: flex-start; gap: 0; padding: 8px 24px 20px; transform: translateY(-120%); transition: transform 0.3s var(--ease); height: auto;
+    }
+    .nav-links.open { transform: translateY(0); }
+    .nav-links a { padding: 13px 0; width: 100%; border-bottom: 1px solid var(--border-soft); }
+    .nav-links .nav-cta { margin-top: 12px; text-align: center; width: 100%; border-bottom: 0; }
+    .hamburger { display: flex; }
+    section { padding: 76px 0; }
+    .section-title { font-size: 30px; }
+    .intel, .contact { padding: 36px 24px; }
+    .hero { padding-top: 110px; }
+  }
+  @media (max-width: 480px) {
+    .stats-grid { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .js .reveal { opacity: 1; transform: none; transition: none; }
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="#home" class="brand">Carlo<span>.</span>Crizaldo</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#projects">Projects</a>
+      <a href="resume.html" target="_blank" rel="noopener">Resume</a>
+      <a href="#contact">Contact</a>
+      <a href="resume.html" target="_blank" rel="noopener" class="nav-cta">Download Resume</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="container hero-inner">
+    <div class="hero-tag reveal"><span class="dot"></span> Open to senior IT & systems opportunities</div>
+    <h1 class="display reveal d1">Carlo <span class="accent">Crizaldo</span></h1>
+    <div class="hero-role reveal d2">Senior IT &amp; Systems Professional<span class="sep">•</span>Infrastructure<span class="sep">•</span>Systems<span class="sep">•</span>Business Applications</div>
+    <p class="hero-lead reveal d2">I build, secure, and support the IT systems that keep enterprise operations running — from servers, networks, and cloud infrastructure to .NET applications and SAP-driven business processes. Twelve years inside Intel taught me to connect technology to real operational outcomes.</p>
+    <div class="hero-actions reveal d3">
+      <a href="#experience" class="btn btn-primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
+        View My Experience
+      </a>
+      <a href="resume.html" target="_blank" rel="noopener" class="btn btn-ghost">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+        Download Resume
+      </a>
+    </div>
+    <div class="hero-connect reveal d4">Or <a href="#contact">let's connect</a> about your infrastructure, systems, or automation needs.</div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section style="padding-top: 30px;">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat reveal"><div class="num">25<span>+</span></div><div class="label">Years in enterprise IT &amp; operations</div></div>
+      <div class="stat reveal d1"><div class="num">12</div><div class="label">Years at Intel Corporation</div></div>
+      <div class="stat reveal d2"><div class="num">12<span>+</span></div><div class="label">Years systems &amp; network administration</div></div>
+      <div class="stat reveal d3"><div class="num">10<span>+</span></div><div class="label">Years warehouse &amp; inventory management</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">About</span>
+      <h2 class="section-title display">An IT professional who speaks both tech and business</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>I'm a versatile IT professional who has spent <strong>more than two decades</strong> keeping enterprise technology reliable and making it work for the people who depend on it. My career spans hands-on infrastructure and networking, .NET application development, and deep involvement in the business operations those systems support.</p>
+        <p>Over a <strong>12-year tenure at Intel Corporation</strong>, I progressed from a front-line warehouse role to a seasoned System Analyst — working across IT, warehouse, material, and inventory management. That arc gave me something many specialists lack: the ability to see how a server, a network, an application, and a business process all fit together.</p>
+        <p>Today I operate as a <strong>System &amp; Network Administrator and .NET Programmer</strong> in Riyadh, where I own infrastructure end to end — cloud, firewalls, VPNs, virtualization, email, backup, and the homegrown tools that fill the gaps off-the-shelf software leaves behind. I'm equally comfortable in a server room, a SAP session, or a code editor.</p>
+        <p>What I bring is breadth with depth: the judgement to keep systems stable, the curiosity to automate what's manual, and the operational fluency to translate between technical and business teams.</p>
+      </div>
+      <aside class="about-card reveal d1">
+        <h4>Positioning</h4>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Infrastructure, systems &amp; network administration</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> .NET &amp; web application development</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> SAP super user (MM/WM/IM/PP/QM/SD)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Warehouse, material &amp; inventory operations</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Process improvement &amp; automation</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Enterprise IT in manufacturing &amp; trading</li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERTISE ============ -->
+<section id="expertise" style="background: var(--bg-2);">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Core Expertise</span>
+      <h2 class="section-title display">What I work with, day to day</h2>
+      <p class="section-sub">Organized by the way the work actually shows up — not a keyword wall.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="expertise-grid">
+      <div class="exp-card reveal">
+        <div class="exp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <h3>Infrastructure &amp; Systems</h3>
+        <div class="exp-tags">
+          <span>System Administration</span><span>Server Administration</span><span>Network Administration</span>
+          <span>Virtualization</span><span>Backup &amp; Disaster Recovery</span><span>IT Infrastructure</span><span>Troubleshooting</span>
+        </div>
+      </div>
+      <div class="exp-card reveal d1">
+        <div class="exp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+        <h3>Software &amp; Development</h3>
+        <div class="exp-tags">
+          <span>.NET</span><span>Windows Application Development</span><span>Web Development</span>
+          <span>Application Support</span><span>Homegrown Tooling</span><span>Software Development</span>
+        </div>
+      </div>
+      <div class="exp-card reveal d2">
+        <div class="exp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v4H3z"/><path d="M5 7v13M19 7v13M9 7v13M15 7v13"/></svg></div>
+        <h3>Enterprise &amp; Business Systems</h3>
+        <div class="exp-tags">
+          <span>System Analysis</span><span>SAP (MM/WM/IM/PP/QM/SD)</span><span>Warehouse Management</span>
+          <span>Material Management</span><span>Inventory Management</span><span>Business Process Support</span><span>Office 365 &amp; Power Platform</span>
+        </div>
+      </div>
+      <div class="exp-card reveal d3">
+        <div class="exp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>Automation &amp; Improvement</h3>
+        <div class="exp-tags">
+          <span>Process Automation</span><span>Workflow Improvement</span><span>Operational Efficiency</span>
+          <span>Problem Solving</span><span>Continuous Improvement</span><span>Root-Cause Analysis</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE / TIMELINE ============ -->
+<section id="experience">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Career Journey</span>
+      <h2 class="section-title display">Experience, built on real progression</h2>
+      <p class="section-sub">From the warehouse floor to enterprise system analysis — every step supported by the source of record.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="timeline">
+
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-head"><span class="tl-role">System &amp; Network Administrator</span><span class="tl-co">/ .NET Programmer</span></div>
+        <div class="tl-meta">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg> Ahmad A. Abed Trading Co. Ltd.</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Riyadh, Saudi Arabia</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> Mar 2012 – Present</span>
+        </div>
+        <div class="tl-body">
+          Owns IT infrastructure end to end for a trading organization and builds the tools its operations rely on.
+          <ul>
+            <li>Developed the initial phase of an e-invoicing system, removing the need for a full SAP implementation and delivering meaningful cost savings.</li>
+            <li>Administers AWS cloud infrastructure and Office 365 (Exchange Online, Teams, SharePoint) for reliable day-to-day collaboration.</li>
+            <li>Implemented Sophos firewalls, SSL VPNs, and site-to-site tunnels to harden network security and enable secure remote access.</li>
+            <li>Configured Grandstream PBX, IP phones, and access points; delivered technical support and end-user training.</li>
+            <li>Manages servers, internal/external networks, backups, disaster recovery, user accounts, and anti-virus/anti-spam — keeping systems available and recoverable.</li>
+            <li>Acts as SAP super user across SD, MM, PP, and QM, bridging business and IT on the floor.</li>
+            <li>Builds data analytics and visualization with <strong>Power BI</strong>, turning operational data into dashboards that business users act on.</li>
+            <li>Runs a <strong>local AI lab</strong> focused on Agentic AI — experimenting with autonomous agents and LLM tooling against real operational problems.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item feature reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-head"><span class="tl-role">System Analyst</span><span class="tl-co">/ Safety Officer</span></div>
+        <div class="tl-meta">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg> Intel Corporation</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Gen. Trias, Cavite, Philippines</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> Feb 2006 – Jun 2009</span>
+        </div>
+        <div class="tl-body">
+          System super user for SAP and WIINGS across the Greater Asia Region; led regional deployments and built the tracking tools the warehouses ran on.
+          <ul>
+            <li>Led regional SAP/WIINGS enhancements and deployments for the Greater Asia Region (GAR).</li>
+            <li>Part of the deployment team for the Vietnam MSAP rollout; performed User Acceptance Testing (UAT).</li>
+            <li>Built homegrown web applications — ITS (India Tracking System) and the Malaysia IDM Tool — to monitor non-stock and Just-in-Time materials in the warehouse.</li>
+            <li>Developed IDTS (IDM Delivery Tracking System), an order-acknowledgement tool used across all CV factories in WIINGS — winner of an Extra Mile Award (EMA).</li>
+            <li>Developed WPT (Wait Part Tool), which streamlined wait-part monitoring across all CV factories and earned a Quarterly Recognition Award (QRA) and Tatak Kagalingan Award (TKA).</li>
+          </ul>
+          <span class="tl-award">★ Awards: EMA · QRA · TKA</span>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-head"><span class="tl-role">Inventory Analyst</span></div>
+        <div class="tl-meta">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg> Intel Corporation</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> Apr 2004 – Feb 2006</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Promoted</span>
+        </div>
+        <div class="tl-body">
+          <ul>
+            <li>Monitored stock levels using historical data and demand forecasts to optimize inventory and minimize carrying costs; reconciled physical counts against records.</li>
+            <li>Coordinated cycle counts and led root-cause investigation of inventory discrepancies with corrective and preventive actions.</li>
+            <li>Headed the MS GUV task force, cutting first-pass Gross Unit Variance for Indirect Materials — Extra Mile Award (EMA).</li>
+            <li>Led the Dead Inventory Reduction initiative: freed 406 pallet positions, cut dead inventory 94% (highest among all Virtual Factory sites), with projected cost savings of $40K and 1.8 hours of man-hour savings — Extra Mile Award (EMA).</li>
+          </ul>
+          <span class="tl-award">★ Awards: EMA · Materials Dept. Outstanding Employee</span>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-head"><span class="tl-role">Material Specialist</span></div>
+        <div class="tl-meta">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg> Intel Corporation</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> Jan 2001 – Apr 2004</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Promoted</span>
+        </div>
+        <div class="tl-body">
+          <ul>
+            <li>Managed receiving, storage, and distribution of materials to the manufacturing floor, keeping production supplied with the right components.</li>
+            <li>Applied 5S methodology and safety protocols to maintain an organized, secure warehouse environment.</li>
+            <li>Led the IDM Receiving Business Process Improvement Project — consolidated IDMs/DMs across warehouses, cutting delivery frequency and receiving processing time by 52% (labor run rate 0.2 → 0.7) and freeing 104 pallet positions — Quarterly Recognition Award (QRA).</li>
+          </ul>
+          <span class="tl-award">★ Awards: QRA · Materials Dept. Outstanding Employee</span>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-head"><span class="tl-role">Cycle Counter</span></div>
+        <div class="tl-meta">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg> Intel Corporation</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> Apr 1999 – Jan 2001</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Promoted</span>
+        </div>
+        <div class="tl-body">
+          <ul>
+            <li>Verified inventory through physical counts and reconciled variances to keep records accurate.</li>
+            <li>Supported suppliers and auditors during consignment audits; served as back-up Inventory Analyst.</li>
+            <li>Key player in the successful WRX-to-SAP warehouse implementation and in beating GUV goals through disciplined cycle counting.</li>
+          </ul>
+          <span class="tl-award">★ Award: Materials Dept. Outstanding Employee</span>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-head"><span class="tl-role">Material Handler</span><span class="tl-co">/ Team Leader</span></div>
+        <div class="tl-meta">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg> Intel Corporation</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> Jul 1997 – Apr 1999</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Promoted</span>
+        </div>
+        <div class="tl-body">
+          <ul>
+            <li>Received and verified incoming materials against purchase orders; performed quality checks and documented discrepancies.</li>
+            <li>Handled storage and material movement (forklifts, pallet jacks) under 5S and safety protocols.</li>
+            <li>Supported order fulfillment — picking, packing, and shipment — and coordinated closely with the team to meet production needs.</li>
+          </ul>
+          <span class="tl-award">★ Award: Materials Dept. Outstanding Employee</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ INTEL FEATURE ============ -->
+<section style="background: var(--bg-2);">
+  <div class="container">
+    <div class="section-head reveal" style="text-align:center; margin-left:auto; margin-right:auto;">
+      <span class="eyebrow">A Major Credibility Signal</span>
+      <h2 class="section-title display">12 Years at Intel Corporation</h2>
+      <p class="section-sub">From the warehouse floor to System Analyst — enterprise IT exposure, systems thinking, and a track record of recognized results.</p>
+    </div>
+    <div class="intel reveal">
+      <div class="intel-grid">
+        <div>
+          <h3 class="display">A progression built on adaptability and operational know-how</h3>
+          <p>Across four promotions at Intel, I moved from moving material on the floor to analyzing and improving the systems behind it — picking up SAP, warehouse management, and application development along the way.</p>
+          <ul class="intel-steps">
+            <li><span class="yr">1997</span><span class="txt"><b>Material Handler / Team Leader</b> — receiving, storage, fulfillment</span></li>
+            <li><span class="yr">1999</span><span class="txt"><b>Cycle Counter</b> — inventory accuracy, WRX→SAP rollout</span></li>
+            <li><span class="yr">2001</span><span class="txt"><b>Material Specialist</b> — receiving process improvement</span></li>
+            <li><span class="yr">2004</span><span class="txt"><b>Inventory Analyst</b> — forecasting, variance reduction</span></li>
+            <li><span class="yr">2006</span><span class="txt"><b>System Analyst</b> — SAP/WIINGS, homegrown tooling</span></li>
+          </ul>
+        </div>
+        <div class="awards-box">
+          <h4>Recognition Earned</h4>
+          <div class="award-row"><span class="name">Extra Mile Award (EMA)</span><span class="cnt">×3</span></div>
+          <div class="award-row"><span class="name">Quarterly Recognition Award (QRA)</span><span class="cnt">×2</span></div>
+          <div class="award-row"><span class="name">Tatak Kagalingan Award (TKA)</span><span class="cnt">×1</span></div>
+          <div class="award-row"><span class="name">Materials Dept. Outstanding Employee</span><span class="cnt">×4</span></div>
+          <p style="color:var(--text-3); font-size:13px; margin-top:16px;">Awards tied to IDTS, WPT, Dead Inventory Reduction, MS GUV task force, and IDM Receiving improvement — all documented in the source record.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="projects">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Selected Experience &amp; Solutions</span>
+      <h2 class="section-title display">Real work, framed as outcomes</h2>
+      <p class="section-sub">Every item below is drawn from the verified source record — no invented projects.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="proj-grid">
+
+      <article class="proj reveal">
+        <div class="proj-top"><h3>E-Invoicing System (Phase 1)</h3><span class="proj-co">Ahmad A. Abed Trading</span></div>
+        <div class="proj-block"><div class="k">The Challenge</div><div class="v">The business needed compliant invoicing without the cost and complexity of a full ERP rollout.</div></div>
+        <div class="proj-block"><div class="k">My Role &amp; Solution</div><div class="v">Designed and developed the initial phase of an e-invoice system in-house as the .NET programmer.</div></div>
+        <div class="proj-block"><div class="k">The Result</div><div class="v">Eliminated the need for a SAP implementation, delivering significant cost savings while meeting invoicing requirements.</div></div>
+        <div class="proj-tech"><span>.NET</span><span>Web Development</span><span>Business Process</span></div>
+      </article>
+
+      <article class="proj reveal d1">
+        <div class="proj-top"><h3>IDTS — IDM Delivery Tracking System</h3><span class="proj-co">Intel Corporation</span></div>
+        <div class="proj-block"><div class="k">The Challenge</div><div class="v">Factories needed a reliable way to confirm receipt of Indirect Material orders across sites.</div></div>
+        <div class="proj-block"><div class="k">My Role &amp; Solution</div><div class="v">Led and developed IDTS as a confirmation tool used across all CV factories within WIINGS.</div></div>
+        <div class="proj-block"><div class="k">The Result</div><div class="v">Standardized order acknowledgment enterprise-wide — recognized with an Extra Mile Award (EMA).</div></div>
+        <div class="proj-tech"><span>Web Development</span><span>SAP / WIINGS</span><span>Process Tooling</span></div>
+      </article>
+
+      <article class="proj reveal d2">
+        <div class="proj-top"><h3>WPT — Wait Part Tool</h3><span class="proj-co">Intel Corporation</span></div>
+        <div class="proj-block"><div class="k">The Challenge</div><div class="v">Wait-part monitoring across factories was manual and slow to surface status to engineers.</div></div>
+        <div class="proj-block"><div class="k">My Role &amp; Solution</div><div class="v">Developed WPT to streamline wait-part monitoring and notify Traffic and MS Receiving of shipment arrivals.</div></div>
+        <div class="proj-block"><div class="k">The Result</div><div class="v">Faster engineer feedback loops — earned a QRA and a Tatak Kagalingan Award (TKA).</div></div>
+        <div class="proj-tech"><span>Web Development</span><span>Workflow Automation</span><span>Cross-site Comms</span></div>
+      </article>
+
+      <article class="proj reveal">
+        <div class="proj-top"><h3>Dead Inventory Reduction</h3><span class="proj-co">Intel Corporation</span></div>
+        <div class="proj-block"><div class="k">The Challenge</div><div class="v">Excess dead inventory tied up warehouse space and carrying cost.</div></div>
+        <div class="proj-block"><div class="k">My Role &amp; Solution</div><div class="v">Led the initiative as Inventory Analyst, targeting Indirect Material dead stock across sites.</div></div>
+        <div class="proj-block"><div class="k">The Result</div><div class="v">Freed 406 pallet positions, cut dead inventory 94% (highest of all VF sites), ~$40K projected savings and 1.8 hrs man-hour savings — EMA.</div></div>
+        <div class="proj-tech"><span>Inventory Management</span><span>Data Analysis</span><span>Process Improvement</span></div>
+      </article>
+
+      <article class="proj reveal d1">
+        <div class="proj-top"><h3>IDM Receiving Process Improvement</h3><span class="proj-co">Intel Corporation</span></div>
+        <div class="proj-block"><div class="k">The Challenge</div><div class="v">Fragmented receiving flows created unnecessary handling and delivery trips between warehouses.</div></div>
+        <div class="proj-block"><div class="k">My Role &amp; Solution</div><div class="v">Led the project to consolidate IDMs in CV1 and DMs in CV4, removing redundant material movement.</div></div>
+        <div class="proj-block"><div class="k">The Result</div><div class="v">Receiving processing time cut 52% (labor run rate 0.2 → 0.7); freed 104 pallet positions — QRA.</div></div>
+        <div class="proj-tech"><span>Warehouse Ops</span><span>5S</span><span>Lean Process</span></div>
+      </article>
+
+      <article class="proj reveal d2">
+        <div class="proj-top"><h3>WRX → SAP &amp; Vietnam MSAP Rollouts</h3><span class="proj-co">Intel Corporation</span></div>
+        <div class="proj-block"><div class="k">The Challenge</div><div class="v">New warehouse and regional SAP systems needed careful, low-disruption deployment.</div></div>
+        <div class="proj-block"><div class="k">My Role &amp; Solution</div><div class="v">Key player in the WRX-to-SAP warehouse implementation; on the deployment team for Vietnam MSAP, performing UAT.</div></div>
+        <div class="proj-block"><div class="k">The Result</div><div class="v">Successful, validated go-lives across sites with business users trained and supported.</div></div>
+        <div class="proj-tech"><span>SAP</span><span>UAT</span><span>Deployment</span></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ VALUE ============ -->
+<section style="background: var(--bg-2);">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">What I Bring To The Table</span>
+      <h2 class="section-title display">Why hire Carlo?</h2>
+      <p class="section-sub">The employer-side answer — concrete ways this background creates value.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="value-grid">
+      <div class="value reveal"><div class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><h3>Reliable IT operations</h3><p>Own infrastructure, servers, networks, backup, and DR so systems stay available and recoverable.</p></div>
+      <div class="value reveal d1"><div class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><h3>End-to-end system support</h3><p>From cloud and firewalls to email and line-of-business apps — one person who sees the whole stack.</p></div>
+      <div class="value reveal d2"><div class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Secure, connected networks</h3><p>Firewalls, VPNs, and site-to-site tunnels that keep remote and branch operations safe and linked.</p></div>
+      <div class="value reveal"><div class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v4H3z"/><path d="M5 7v13M19 7v13M9 7v13M15 7v13"/></svg></div><h3>SAP-enabled operations</h3><p>Deep SAP super-user fluency (MM/WM/IM/PP/QM/SD) connecting business process to IT delivery.</p></div>
+      <div class="value reveal d1"><div class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4"/><circle cx="12" cy="12" r="3"/></svg></div><h3>Automation that removes toil</h3><p>Homegrown tools and Power Platform flows that replace manual steps and free people for higher-value work.</p></div>
+      <div class="value reveal d2"><div class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3>Tech-to-business translator</h3><p>Decades inside operations mean I bridge technical teams and the people who run the business.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STRENGTHS ============ -->
+<section>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Professional Strengths</span>
+      <h2 class="section-title display">How I'm wired to deliver</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="strengths">
+      <div class="strength reveal"><div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div><div><h4>Enterprise IT depth</h4><p>12 years inside Intel plus ongoing admin ownership — comfortable at scale and under scrutiny.</p></div></div>
+      <div class="strength reveal d1"><div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></div><div><h4>Bridges tech &amp; business</h4><p>I understand the operation, not just the system — so solutions fit how work actually happens.</p></div></div>
+      <div class="strength reveal d2"><div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><div><h4>Full-stack IT generalist</h4><p>Infrastructure, networking, development, and SAP — rare breadth that reduces hand-off risk.</p></div></div>
+      <div class="strength reveal"><div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2-2 2.6-2.6z"/></svg></div><div><h4>Builder &amp; problem solver</h4><p>Multiple award-winning internal tools prove I ship fixes, not just reports.</p></div></div>
+      <div class="strength reveal d1"><div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.5 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.65 4.36A9 9 0 0 0 20.5 15"/></svg></div><div><h4>Adaptable &amp; progressive</h4><p>Rose from Material Handler to System Analyst — I grow into whatever the operation needs.</p></div></div>
+      <div class="strength reveal d2"><div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><h4>Reliability under pressure</h4><p>Backup/DR, security, and troubleshooting are core to how I keep businesses running.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TECH STACK ============ -->
+<section style="background: var(--bg-2);">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Technology Stack</span>
+      <h2 class="section-title display">Tools I actually use</h2>
+      <p class="section-sub">Grouped by function — only what's backed by real experience.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="tech-grid">
+      <div class="tech-col reveal">
+        <h3><span class="tic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>Programming &amp; Dev</h3>
+        <div class="chips"><span>.NET</span><span>Windows App Development</span><span>Web Development</span><span>Homegrown Tooling</span></div>
+      </div>
+      <div class="tech-col reveal d1">
+        <h3><span class="tic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>Infrastructure &amp; Systems</h3>
+        <div class="chips"><span>Windows Server</span><span>Linux</span><span>Virtualization (Hyper-V, Proxmox, XCP-NG)</span><span>NAS (OpenMediaVault, TrueNAS)</span><span>Backup &amp; DR (Zoolz)</span><span>AWS Cloud</span></div>
+      </div>
+      <div class="tech-col reveal d2">
+        <h3><span class="tic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14 0M1.5 9a16 16 0 0 1 21 0M8.5 16a6 6 0 0 1 7 0"/><circle cx="12" cy="20" r="1"/></svg></span>Networking &amp; Security</h3>
+        <div class="chips"><span>Firewalls (PfSense, Sophos, OpnSense)</span><span>VPN (OpenVPN, ZeroTier, WireGuard, IPSEC)</span><span>Grandstream PBX</span><span>Ubiquiti / Unifi</span><span>Network Design</span></div>
+      </div>
+      <div class="tech-col reveal">
+        <h3><span class="tic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v4H3z"/><path d="M5 7v13M19 7v13M9 7v13M15 7v13"/></svg></span>Enterprise &amp; Business</h3>
+        <div class="chips"><span>SAP (MM/WM/IM/PP/QM/SD)</span><span>WIINGS</span><span>Office 365 (Exchange, Teams, SharePoint)</span><span>Power BI</span><span>Power Automate</span><span>Power Query</span><span>Freshworks</span></div>
+      </div>
+      <div class="tech-col reveal d1" style="grid-column: span 2;">
+        <h3><span class="tic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></span>Data, Analytics &amp; AI</h3>
+        <div class="chips"><span>Power BI (dashboards &amp; viz)</span><span>Power Query (ETL)</span><span>Data Analytics</span><span>Local AI Lab</span><span>Agentic AI</span><span>LLM Tooling &amp; Agents</span><span>Operational Use Cases</span></div>
+      </div>
+      <div class="tech-col reveal d1">
+        <h3><span class="tic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg></span>Databases</h3>
+        <div class="chips"><span>MS SQL</span><span>MariaDB</span><span>PostgreSQL</span><span>SQLite</span><span>MySQL</span></div>
+      </div>
+      <div class="tech-col reveal d2">
+        <h3><span class="tic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></svg></span>OS &amp; Productivity</h3>
+        <div class="chips"><span>Windows</span><span>Linux</span><span>Open Source</span><span>MS Office Suite</span><span>5S Methodology</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EDUCATION (PLACEHOLDERS) ============ -->
+<section id="education">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Education &amp; Certifications</span>
+      <h2 class="section-title display">Credentials to complete</h2>
+      <p class="section-sub">The source record did not include education or certifications. The cards below are clearly marked placeholders — fill them in and they'll drop straight into the layout.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="edu-grid">
+      <div class="edu reveal">
+        <span class="ph-tag">Placeholder</span>
+        <h3>Degree / Diploma</h3>
+        <p>[e.g., B.S. in Information Technology — Institution Name, Year]</p>
+        <p class="hint">Replace with your actual highest qualification. Add more cards as needed.</p>
+      </div>
+      <div class="edu reveal d1">
+        <span class="ph-tag">Placeholder</span>
+        <h3>Certifications &amp; Training</h3>
+        <p>[e.g., AWS / Azure / ITIL / CompTIA / SAP certifications — issuer, year]</p>
+        <p class="hint">List only verified credentials. Remove the card if not applicable.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" style="background: var(--bg-2);">
+  <div class="container">
+    <div class="contact reveal">
+      <h2 class="display">Let's Build Better IT Solutions</h2>
+      <p>I'm open to roles where infrastructure, systems, programming, and business operations come together to create value — senior administration, systems analysis, IT operations, or application support.</p>
+      <div class="contact-actions">
+        <a href="mailto:carlo.crizaldo@gmail.com" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
+          Email Carlo
+        </a>
+        <a href="https://api.whatsapp.com/send/?phone=%2B966508291085" target="_blank" rel="noopener" class="btn btn-ghost">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:carlo.crizaldo@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg> carlo.crizaldo@gmail.com</a>
+        <a href="tel:+966508291085"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +966 50 829 1085</a>
+        <a href="https://www.linkedin.com/in/carlocrizaldo/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v6h-4v-6a2 2 0 0 0-4 0v6h-4v-6a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="11"/><circle cx="4" cy="4" r="2"/></svg> LinkedIn</a>
+        <a href="https://www.facebook.com/xcrackdcodex/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Facebook</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container foot-inner">
+    <div>© <span id="year"></span> Carlo Crizaldo — Senior IT &amp; Systems Professional</div>
+    <div>Built from the verified source record · No fabricated achievements</div>
+  </div>
+</footer>
+
+<script>
+  // enable JS-only reveal animations (keeps content visible if JS is disabled)
+  document.documentElement.classList.add('js');
+
+  // year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    hamburger.classList.toggle('open', open);
+    hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+  }));
+
+  // scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

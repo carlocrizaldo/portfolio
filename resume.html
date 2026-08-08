@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Carlo Crizaldo — Resume | Senior IT & Systems Professional</title>
+<meta name="description" content="ATS-friendly resume for Carlo Crizaldo, Senior IT & Systems Professional: infrastructure, systems & network administration, .NET development, and SAP business systems. 12 years at Intel Corporation." />
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#14181f; --ink2:#39424f; --muted:#6b7585; --line:#dfe4ea; --accent:#2563d6;
+    --bg:#f4f6f9; --card:#ffffff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Inter',system-ui,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased;}
+  .page{max-width:840px;margin:32px auto;background:var(--card);padding:54px 60px;box-shadow:0 10px 40px -18px rgba(0,0,0,.35);border-radius:8px;}
+  a{color:var(--accent);text-decoration:none;}
+
+  /* header */
+  .r-head{border-bottom:3px solid var(--accent);padding-bottom:20px;margin-bottom:26px;}
+  .r-name{font-size:32px;font-weight:800;letter-spacing:-.02em;line-height:1.1;}
+  .r-title{font-size:15px;font-weight:600;color:var(--accent);margin-top:4px;letter-spacing:.01em;}
+  .r-contact{margin-top:12px;font-size:13px;color:var(--ink2);display:flex;flex-wrap:wrap;gap:6px 18px;}
+  .r-contact span{display:inline-flex;align-items:center;gap:6px;}
+
+  /* sections */
+  .r-sec{margin-bottom:24px;}
+  .r-h{font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);border-bottom:1px solid var(--line);padding-bottom:6px;margin-bottom:12px;}
+  p{font-size:13.5px;color:var(--ink2);margin-bottom:8px;}
+  strong{color:var(--ink);font-weight:600;}
+
+  .r-summary{font-size:13.5px;color:var(--ink2);}
+
+  .skills{display:grid;grid-template-columns:1fr 1fr;gap:10px 28px;}
+  .skill-row{font-size:13px;}
+  .skill-row b{display:block;font-weight:700;color:var(--ink);font-size:12px;margin-bottom:2px;}
+
+  .job{margin-bottom:16px;page-break-inside:avoid;}
+  .job-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 12px;}
+  .job-role{font-size:14.5px;font-weight:700;color:var(--ink);}
+  .job-co{font-size:13px;font-weight:600;color:var(--accent);}
+  .job-meta{font-size:12px;color:var(--muted);margin:2px 0 8px;}
+  .job ul{list-style:none;margin:0;}
+  .job li{position:relative;padding-left:16px;margin-bottom:5px;font-size:13px;color:var(--ink2);}
+  .job li::before{content:"•";position:absolute;left:2px;color:var(--accent);font-weight:700;}
+  .award{display:inline-block;margin-top:4px;font-size:11.5px;font-weight:600;color:var(--accent);background:#eef4ff;border:1px solid #d4e2fb;padding:3px 9px;border-radius:6px;}
+
+  .proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 26px;}
+  .proj{border:1px solid var(--line);border-radius:7px;padding:13px 15px;page-break-inside:avoid;}
+  .proj h4{font-size:13.5px;font-weight:700;margin-bottom:3px;}
+  .proj .co{font-size:11.5px;color:var(--accent);font-weight:600;margin-bottom:6px;}
+  .proj p{font-size:12.5px;margin-bottom:5px;}
+  .proj .k{font-weight:700;color:var(--ink);}
+
+  .edu-card{border:1px dashed var(--line);border-radius:7px;padding:14px 16px;}
+  .edu-card h4{font-size:14px;font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:10px;}
+  .ph{font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#b9791f;background:#fdf2dd;border:1px solid #f3dfb0;padding:3px 8px;border-radius:5px;}
+  .edu-card p{font-size:12.5px;margin-bottom:4px;}
+  .edu-card .hint{font-size:11.5px;color:var(--muted);font-style:italic;}
+
+  .toolbar{position:sticky;top:0;background:var(--bg);padding:14px 0;display:flex;gap:10px;justify-content:center;border-bottom:1px solid var(--line);z-index:10;}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:13.5px;padding:10px 18px;border-radius:8px;background:var(--accent);color:#fff;border:0;cursor:pointer;}
+  .btn:hover{background:#1d4fbf;}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);}
+  .btn.ghost:hover{border-color:var(--accent);color:var(--accent);}
+
+  @media print{
+    body{background:#fff;}
+    .page{margin:0;box-shadow:none;border-radius:0;max-width:none;padding:36px 40px;}
+    .toolbar{display:none;}
+    a{color:var(--ink);}
+  }
+  @media (max-width:680px){
+    .page{padding:34px 24px;margin:0;}
+    .skills,.proj-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <button class="btn" onclick="window.print()">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
+    Print / Save as PDF
+  </button>
+  <a class="btn ghost" href="index.html">← Back to Portfolio</a>
+</div>
+
+<main class="page">
+
+  <header class="r-head">
+    <div class="r-name">CARLO CRIZALDO</div>
+    <div class="r-title">Senior IT &amp; Systems Professional — Infrastructure · Systems · Business Applications</div>
+    <div class="r-contact">
+      <span>✉ carlo.crizaldo@gmail.com</span>
+      <span>☎ +966 50 829 1085</span>
+      <span>📍 Riyadh, Saudi Arabia</span>
+      <span>🔗 linkedin.com/in/carlocrizaldo</span>
+    </div>
+  </header>
+
+  <!-- PROFESSIONAL SUMMARY -->
+  <section class="r-sec">
+    <div class="r-h">Professional Summary</div>
+    <p class="r-summary">Versatile IT professional with <strong>25+ years</strong> across enterprise IT, infrastructure, systems &amp; network administration, .NET application development, and SAP-driven business operations. Spent <strong>12 years at Intel Corporation</strong>, progressing from warehouse operations to System Analyst across IT, warehouse, material, and inventory management. Currently owns end-to-end IT infrastructure for a trading organization in Riyadh — cloud, networking, security, virtualization, email, backup, and homegrown tooling. Combines technical depth with operational fluency to connect technology to real business outcomes.</p>
+  </section>
+
+  <!-- CORE COMPETENCIES -->
+  <section class="r-sec">
+    <div class="r-h">Core Competencies</div>
+    <div class="skills">
+      <div class="skill-row"><b>Infrastructure &amp; Systems</b>System Administration · Server Administration · Network Administration · Virtualization · Backup &amp; DR · Troubleshooting</div>
+      <div class="skill-row"><b>Software &amp; Development</b>.NET · Windows Application Development · Web Development · Application Support · Homegrown Tooling</div>
+      <div class="skill-row"><b>Enterprise &amp; Business Systems</b>System Analysis · SAP (MM/WM/IM/PP/QM/SD) · Warehouse Management · Material &amp; Inventory Management · Office 365 · Power Platform</div>
+      <div class="skill-row"><b>Automation &amp; Improvement</b>Process Automation · Workflow Improvement · Operational Efficiency · Root-Cause Analysis · Continuous Improvement</div>
+    </div>
+  </section>
+
+  <!-- PROFESSIONAL EXPERIENCE -->
+  <section class="r-sec">
+    <div class="r-h">Professional Experience</div>
+
+    <div class="job">
+      <div class="job-top"><span class="job-role">System &amp; Network Administrator / .NET Programmer</span><span class="job-co">Ahmad A. Abed Trading Co. Ltd.</span></div>
+      <div class="job-meta">Riyadh, Saudi Arabia · Mar 2012 – Present</div>
+      <ul>
+        <li>Developed the initial phase of an e-invoicing system, eliminating the need for a full SAP implementation and delivering significant cost savings.</li>
+        <li>Administered AWS cloud infrastructure and Office 365 (Exchange Online, Teams, SharePoint) for reliable collaboration.</li>
+        <li>Implemented Sophos firewalls, SSL VPNs, and site-to-site tunnels to harden security and enable secure remote access.</li>
+        <li>Configured Grandstream PBX, IP phones, and access points; delivered technical support and end-user training.</li>
+        <li>Managed servers, internal/external networks, backups, disaster recovery, user accounts, and anti-virus/anti-spam.</li>
+        <li>Served as SAP super user across SD, MM, PP, and QM, bridging business and IT operations.</li>
+        <li>Built data analytics and visualization with Power BI, turning operational data into actionable dashboards.</li>
+        <li>Ran a local AI lab focused on Agentic AI, experimenting with autonomous agents and LLM tooling on real operational problems.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-top"><span class="job-role">System Analyst / Safety Officer</span><span class="job-co">Intel Corporation</span></div>
+      <div class="job-meta">Gen. Trias, Cavite, Philippines · Feb 2006 – Jun 2009</div>
+      <ul>
+        <li>System super user for SAP and WIINGS across the Greater Asia Region (GAR); led regional enhancements and deployments.</li>
+        <li>Part of the deployment team for the Vietnam MSAP implementation; performed User Acceptance Testing (UAT).</li>
+        <li>Built homegrown web applications — ITS (India Tracking System) and the Malaysia IDM Tool — to monitor non-stock and JIT materials.</li>
+        <li>Developed IDTS (IDM Delivery Tracking System), a cross-factory order-acknowledgement tool in WIINGS — Extra Mile Award (EMA).</li>
+        <li>Developed WPT (Wait Part Tool), streamlining wait-part monitoring across all CV factories — QRA &amp; Tatak Kagalingan Award (TKA).</li>
+      </ul>
+      <span class="award">Awards: EMA · QRA · TKA</span>
+    </div>
+
+    <div class="job">
+      <div class="job-top"><span class="job-role">Inventory Analyst</span><span class="job-co">Intel Corporation</span></div>
+      <div class="job-meta">Gen. Trias, Cavite, Philippines · Apr 2004 – Feb 2006</div>
+      <ul>
+        <li>Monitored stock levels using historical data and demand forecasts to optimize inventory and minimize carrying costs; reconciled physical counts.</li>
+        <li>Coordinated cycle counts and led root-cause investigation of inventory discrepancies with corrective and preventive actions.</li>
+        <li>Headed the MS GUV task force, reducing first-pass Gross Unit Variance for Indirect Materials — Extra Mile Award (EMA).</li>
+        <li>Led Dead Inventory Reduction: freed 406 pallet positions, cut dead inventory 94% (highest among all VF sites), ~$40K projected savings and 1.8 hrs man-hour savings — EMA.</li>
+      </ul>
+      <span class="award">Awards: EMA · Materials Dept. Outstanding Employee</span>
+    </div>
+
+    <div class="job">
+      <div class="job-top"><span class="job-role">Material Specialist</span><span class="job-co">Intel Corporation</span></div>
+      <div class="job-meta">Gen. Trias, Cavite, Philippines · Jan 2001 – Apr 2004</div>
+      <ul>
+        <li>Managed receiving, storage, and distribution of materials to the manufacturing floor.</li>
+        <li>Applied 5S methodology and safety protocols to maintain an organized, secure warehouse.</li>
+        <li>Led the IDM Receiving Business Process Improvement Project: consolidated IDMs/DMs, cut receiving processing time 52% (labor run rate 0.2 → 0.7), freed 104 pallet positions — QRA.</li>
+      </ul>
+      <span class="award">Awards: QRA · Materials Dept. Outstanding Employee</span>
+    </div>
+
+    <div class="job">
+      <div class="job-top"><span class="job-role">Cycle Counter</span><span class="job-co">Intel Corporation</span></div>
+      <div class="job-meta">Gen. Trias, Cavite, Philippines · Apr 1999 – Jan 2001</div>
+      <ul>
+        <li>Verified inventory through physical counts and reconciled variances to keep records accurate.</li>
+        <li>Supported suppliers and auditors during consignment audits; served as back-up Inventory Analyst.</li>
+        <li>Key player in the WRX-to-SAP warehouse implementation; consistently beat GUV goals.</li>
+      </ul>
+      <span class="award">Award: Materials Dept. Outstanding Employee</span>
+    </div>
+
+    <div class="job">
+      <div class="job-top"><span class="job-role">Material Handler / Team Leader</span><span class="job-co">Intel Corporation</span></div>
+      <div class="job-meta">Gen. Trias, Cavite, Philippines · Jul 1997 – Apr 1999</div>
+      <ul>
+        <li>Received and verified incoming materials against purchase orders; performed quality checks.</li>
+        <li>Handled storage and material movement under 5S and safety protocols.</li>
+        <li>Supported order fulfillment — picking, packing, and shipment — coordinating with the team.</li>
+      </ul>
+      <span class="award">Award: Materials Dept. Outstanding Employee</span>
+    </div>
+  </section>
+
+  <!-- SELECTED ACHIEVEMENTS / PROJECTS -->
+  <section class="r-sec">
+    <div class="r-h">Selected Achievements &amp; Solutions</div>
+    <div class="proj-grid">
+      <div class="proj">
+        <h4>E-Invoicing System (Phase 1)</h4>
+        <div class="co">Ahmad A. Abed Trading</div>
+        <p><span class="k">Challenge:</span> Need for compliant invoicing without full ERP cost.</p>
+        <p><span class="k">Result:</span> In-house .NET build removed the SAP implementation, saving significant cost.</p>
+      </div>
+      <div class="proj">
+        <h4>IDTS — IDM Delivery Tracking System</h4>
+        <div class="co">Intel Corporation</div>
+        <p><span class="k">Result:</span> Enterprise-wide order acknowledgment in WIINGS — Extra Mile Award.</p>
+      </div>
+      <div class="proj">
+        <h4>WPT — Wait Part Tool</h4>
+        <div class="co">Intel Corporation</div>
+        <p><span class="k">Result:</span> Faster engineer feedback across factories — QRA &amp; TKA.</p>
+      </div>
+      <div class="proj">
+        <h4>Dead Inventory Reduction</h4>
+        <div class="co">Intel Corporation</div>
+        <p><span class="k">Result:</span> 406 pallet positions freed, 94% dead-inventory cut, ~$40K savings.</p>
+      </div>
+      <div class="proj">
+        <h4>IDM Receiving Process Improvement</h4>
+        <div class="co">Intel Corporation</div>
+        <p><span class="k">Result:</span> Receiving time cut 52% (run rate 0.2 → 0.7); 104 pallet positions freed — QRA.</p>
+      </div>
+      <div class="proj">
+        <h4>WRX→SAP &amp; Vietnam MSAP Rollouts</h4>
+        <div class="co">Intel Corporation</div>
+        <p><span class="k">Result:</span> Successful, validated go-lives with business-user training (UAT).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNICAL SKILLS -->
+  <section class="r-sec">
+    <div class="r-h">Technical Skills</div>
+    <div class="skills">
+      <div class="skill-row"><b>Programming &amp; Dev</b>.NET · Windows App Dev · Web Dev · Homegrown Tooling</div>
+      <div class="skill-row"><b>Infrastructure &amp; Systems</b>Windows Server · Linux · Virtualization (Hyper-V, Proxmox, XCP-NG) · NAS (OpenMediaVault, TrueNAS) · Backup &amp; DR (Zoolz) · AWS</div>
+      <div class="skill-row"><b>Networking &amp; Security</b>Firewalls (PfSense, Sophos, OpnSense) · VPN (OpenVPN, ZeroTier, WireGuard, IPSEC) · Grandstream PBX · Ubiquiti/Unifi</div>
+      <div class="skill-row"><b>Enterprise &amp; Business</b>SAP (MM/WM/IM/PP/QM/SD) · WIINGS · Office 365 · Power BI · Power Automate · Power Query · Freshworks</div>
+      <div class="skill-row"><b>Data, Analytics &amp; AI</b>Power BI (dashboards &amp; viz) · Power Query (ETL) · Data Analytics · Local AI Lab · Agentic AI · LLM Tooling &amp; Agents</div>
+      <div class="skill-row"><b>Databases</b>MS SQL · MariaDB · PostgreSQL · SQLite · MySQL</div>
+      <div class="skill-row"><b>OS &amp; Productivity</b>Windows · Linux · Open Source · MS Office · 5S</div>
+    </div>
+  </section>
+
+  <!-- EDUCATION (PLACEHOLDERS) -->
+  <section class="r-sec">
+    <div class="r-h">Education &amp; Certifications</div>
+    <div class="edu-card">
+      <h4>Degree / Diploma <span class="ph">Placeholder</span></h4>
+      <p>[e.g., B.S. in Information Technology — Institution Name, Year]</p>
+      <p class="hint">Not present in the source record — replace with your actual highest qualification.</p>
+    </div>
+    <div class="edu-card" style="margin-top:12px;">
+      <h4>Certifications &amp; Training <span class="ph">Placeholder</span></h4>
+      <p>[e.g., AWS / Azure / ITIL / CompTIA / SAP certifications — issuer, year]</p>
+      <p class="hint">List only verified credentials. Remove if not applicable.</p>
+    </div>
+  </section>
+
+</main>
+</body>
+</html>
